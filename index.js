@@ -2,11 +2,12 @@ import express from 'express'
 import mongoose from 'mongoose'
 import router from './router.js';
 import fileUpload from 'express-fileupload';
+import dotenv from "dotenv";
 
 const PORT = 5000;
-const DB_URL = 'mongodb+srv://user:1234@cluster0.xsmnddu.mongodb.net/?appName=Cluster0'
+const DB_URL = process.env.DB_URL
 const app = express()
-
+dotenv.config();
 
 app.use(express.json())
 app.use(express.static('static'))
